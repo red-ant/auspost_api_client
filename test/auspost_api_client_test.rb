@@ -11,6 +11,11 @@ class AuspostApiClientTest < Minitest::Test
 
   def test_it_can_list_countries
     client = AuspostApiClient::Client.new(ENV["API_KEY"])
+    client.postage.countries.length > 10
+  end
 
+  def test_it_can_calculate_postage_parcel_international
+    client = AuspostApiClient::Client.new(ENV["API_KEY"])
+    puts client.postage.parcel.international.calculate("NZ", 1.0, "INTL_SERVICE_EPI").service
   end
 end

@@ -1,18 +1,19 @@
 require "net/http"
 require "json"
-require "auspost_api_client/models/country"
+
+require "auspost_api_client/postage"
 
 module AuspostApiClient
     class Client
+        attr_reader :headers
+        attr_accessor :postage
+
         def initialize(api_key)
             @headers = {
                 'auth-key' => api_key
             }
-        end
 
-        def countries
-            response = http.request_get("#{API_URL}/country.json", @headers)
-            AuspostApiClient::Models::Countries.from_hash JSON.parse(response.body, symbolize_names: true)
+            @postage = Postage.new(self)
         end
 
         def http

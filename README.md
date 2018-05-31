@@ -2,6 +2,11 @@
 
 Ruby gem for the Australia Post APIs. Currently not finished but it does support calculating shipping costs. 
 
+# Install
+Add line to gemfile
+
+    gem 'auspost_api_client', git: 'https://gitlab.com/bravevision/auspost_api_client'
+
 # Usage
 
     require 'auspost_api_client'

@@ -17,11 +17,11 @@ module AuspostApiClient
 
                 def self.from_hash(hash)
                     ret = Country.new
-                    ret.code = hash['code']
-                    ret.name = hash['name']
-                    ret.description = hash['description']
-                    ret.postal_service_name = hash['postalServiceName']
-                    ret.postal_service_url = hash['postalServiceUrl']
+                    ret.code = hash[:code]
+                    ret.name = hash[:name]
+                    ret.description = hash[:description]
+                    ret.postal_service_name = hash[:postalServiceName]
+                    ret.postal_service_url = hash[:postalServiceUrl]
                     ret
                 end
 

@@ -6,12 +6,12 @@ require "auspost_api_client/version"
 Gem::Specification.new do |spec|
   spec.name          = "auspost_api_client"
   spec.version       = AuspostApiClient::VERSION
-  spec.authors       = ["Luke Picciau"]
-  spec.email         = ["lukepicciau@bravevision.com"]
+  spec.authors       = ["Mike Causer"]
+  spec.email         = ["mike@redant.com.au"]
 
   spec.summary       = "API client for Australia Post"
   spec.description   = "API client for Australia Post"
-  spec.homepage      = "https://gitlab.com/bravevision/auspost_api_client"
+  spec.homepage      = "https://github.com/red-ant/auspost_api_client"
   spec.license       = "MIT"
 
 

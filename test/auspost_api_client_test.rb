@@ -16,11 +16,17 @@ class AuspostApiClientTest < Minitest::Test
 
   def test_it_can_calculate_postage_parcel_international
     client = AuspostApiClient::Client.new(ENV["API_KEY"])
-    assert_equal client.postage.parcel.international.calculate("NZ", 1.0, "INTL_SERVICE_EPI").class, AuspostApiClient::Models::PostageResult
+    assert_equal(
+      client.postage.parcel.international.calculate("NZ", 1.0, "INTL_SERVICE_EPI").class,
+      AuspostApiClient::Models::PostageResult
+    )
   end
+
   def test_it_can_calculate_postage_parcel_domestic
     client = AuspostApiClient::Client.new(ENV["API_KEY"])
-    assert_equal(client.postage.parcel.domestic.calculate("5000", "6000", "60", "10", "40", "5", "AUS_PARCEL_REGULAR")
-                     .class, AuspostApiClient::Models::PostageResult)
+    assert_equal(
+      client.postage.parcel.domestic.calculate("5000", "6000", "60", "10", "40", "5", "AUS_PARCEL_REGULAR").class,
+      AuspostApiClient::Models::PostageResult
+    )
   end
 end
